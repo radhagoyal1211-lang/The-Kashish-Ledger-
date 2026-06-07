@@ -1,6 +1,0 @@
-{
-  "name": "The Kashish Ledger",
-  "description": "A premium intellectual publication by Kashish Goyal exploring finance, economics, society, growth, and human behavior.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
