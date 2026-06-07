@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-writing: "Caveat", cursive, sans-serif;
+  
+  --color-gold: #C7A86D;
+  --color-gold-hover: #B5965C;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF9F6;
+    color: #111111;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Premium Editorial Core CSS Utilities */
+
+/* Elegant fine borders (1px) */
+.border-elegant {
+  border: 1px solid rgba(199, 168, 109, 0.3);
+}
+.border-elegant-darker {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+}
+.dark .border-elegant-darker {
+  border: 1px solid rgba(250, 249, 246, 0.1);
+}
+
+/* Elegant low-shadow or flat styling of containers mimicking high-end press sheets */
+.card-press {
+  background-color: #FAF9F6;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .card-press {
+  background-color: #121211;
+  border: 1px solid rgba(250, 249, 246, 0.08);
+}
+.card-press:hover {
+  border-color: #C7A86D;
+}
+
+/* Premium Buttons - Minimal text-only or delicate border, no bulky brutalist layers */
+.btn-editorial-primary {
+  background-color: #111111;
+  color: #FAF9F6;
+  border: 1px solid #111111;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 0.8rem 1.8rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .btn-editorial-primary {
+  background-color: #FAF9F6;
+  color: #111111;
+  border: 1px solid #FAF9F6;
+}
+.btn-editorial-primary:hover {
+  background-color: transparent;
+  color: #111111;
+  border-color: #111111;
+}
+.dark .btn-editorial-primary:hover {
+  background-color: transparent;
+  color: #FAF9F6;
+  border-color: #FAF9F6;
+}
+
+.btn-editorial-secondary {
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid rgba(17, 17, 17, 0.25);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 0.8rem 1.8rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .btn-editorial-secondary {
+  color: #FAF9F6;
+  border-color: rgba(250, 249, 246, 0.25);
+}
+.btn-editorial-secondary:hover {
+  border-color: #C7A86D;
+  color: #C7A86D;
+}
+
+/* Thin horizontal or vertical rule with centered gold glyph marker */
+.editorial-divider {
+  position: relative;
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.08);
+  margin: 3.5rem 0;
+}
+.dark .editorial-divider {
+  background-color: rgba(250, 249, 246, 0.08);
+}
+.editorial-divider::after {
+  content: "♦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FAF9F6;
+  color: #C7A86D;
+  font-size: 8px;
+  padding: 0 0.75rem;
+}
+.dark .editorial-divider::after {
+  background-color: #121211;
+}
+
+/* Custom Scroll Progress Animation & Micro transitions */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #C7A86D;
+  border-radius: 0px;
+}
+
+/* Theme Transition */
+.theme-transition {
+  transition: background-color 350ms cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 350ms cubic-bezier(0.16, 1, 0.3, 1), 
+              color 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pull Quotes */
+.pull-quote {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #111111;
+  border-left: 2px solid #C7A86D;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+.dark .pull-quote {
+  color: #FAF9F6;
+}
+
+/* Section Numbering style */
+.section-num {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  color: #C7A86D;
+  letter-spacing: 0.15em;
+}
+
+/* ==========================================================================
+   MULTI-THEME ENGINE (Classic Light, Midnight Scholar/Dark, Forest Hermitage, Imperial Burgundy)
+   ========================================================================== */
+
+/* 1. Forest Hermitage Theme */
+.theme-forest {
+  --color-theme-bg: #0D1614;
+  --color-theme-card: #14211D;
+  --color-theme-text: #EDF3F0;
+  --color-theme-text-muted: #83968F;
+  --color-theme-border: rgba(199, 168, 109, 0.18);
+  --color-theme-accent: #C7A86D;
+}
+
+/* 2. Imperial Burgundy Theme */
+.theme-burgundy {
+  --color-theme-bg: #1A0D0E;
+  --color-theme-card: #251416;
+  --color-theme-text: #FAF2F3;
+  --color-theme-text-muted: #A38587;
+  --color-theme-border: rgba(199, 168, 109, 0.2);
+  --color-theme-accent: #C7A86D;
+}
+
+/* Generalized Overrides when Forest or Burgundy is active */
+.theme-forest, .theme-burgundy {
+  background-color: var(--color-theme-bg) !important;
+  color: var(--color-theme-text) !important;
+}
+
+.theme-forest body, .theme-burgundy body {
+  background-color: var(--color-theme-bg) !important;
+  color: var(--color-theme-text) !important;
+}
+
+/* Target main system containers and background layers */
+.theme-forest main, .theme-burgundy main,
+.theme-forest section, .theme-burgundy section,
+.theme-forest .theme-transition, .theme-burgundy .theme-transition,
+.theme-forest .bg-\[\#FAF9F6\], .theme-burgundy .bg-\[\#FAF9F6\],
+.theme-forest .dark\:bg-\[\#0B0B0A\], .theme-burgundy .dark\:bg-\[\#0B0B0A\],
+.theme-forest .dark\:bg-\[\#121211\], .theme-burgundy .dark\:bg-\[\#121211\],
+.theme-forest .bg-neutral-50, .theme-burgundy .bg-neutral-50,
+.theme-forest .dark\:bg-neutral-950, .theme-burgundy .dark\:bg-neutral-950,
+.theme-forest .dark\:bg-\[\#151514\], .theme-burgundy .dark\:bg-\[\#151514\],
+.theme-forest .bg-white\/80, .theme-burgundy .bg-white\/80 {
+  background-color: var(--color-theme-bg) !important;
+  color: var(--color-theme-text) !important;
+}
+
+/* Card and item block overrides */
+.theme-forest .bg-white, .theme-burgundy .bg-white,
+.theme-forest .dark\:bg-\[\#121211\]\/85, .theme-burgundy .dark\:bg-\[\#121211\]\/85,
+.theme-forest .card-press, .theme-burgundy .card-press,
+.theme-forest form, .theme-burgundy form,
+.theme-forest .grid > div, .theme-burgundy .grid > div {
+  background-color: var(--color-theme-card) !important;
+  color: var(--color-theme-text) !important;
+}
+
+/* Borders and dividers */
+.theme-forest .divide-y > *, .theme-burgundy .divide-y > * {
+  border-color: var(--color-theme-border) !important;
+}
+
+/* Headers and Navbars */
+.theme-forest header, .theme-burgundy header,
+.theme-forest .bg-white\/90, .theme-burgundy .bg-white\/90,
+.theme-forest .dark\:bg-neutral-950\/90, .theme-burgundy .dark\:bg-neutral-950\/90 {
+  background-color: rgba(13, 22, 20, 0.95) !important;
+  border-color: var(--color-theme-border) !important;
+}
+.theme-burgundy header,
+.theme-burgundy .bg-white\/90,
+.theme-burgundy .dark\:bg-neutral-950\/90 {
+  background-color: rgba(26, 13, 14, 0.95) !important;
+}
+
+/* Typography color overrides */
+.theme-forest .text-neutral-900, .theme-burgundy .text-neutral-900,
+.theme-forest .text-[#111111], .theme-burgundy .text-[#111111],
+.theme-forest .text-neutral-950, .theme-burgundy .text-neutral-950,
+.theme-forest .dark\:text-white, .theme-burgundy .dark\:text-white,
+.theme-forest .dark\:text-stone-100, .theme-burgundy .dark\:text-stone-100,
+.theme-forest .dark\:text-stone-150, .theme-burgundy .dark\:text-stone-150,
+.theme-forest .dark\:text-\[\#EAE8E4\], .theme-burgundy .dark\:text-\[\#EAE8E4\],
+.theme-forest h1, .theme-burgundy h1,
+.theme-forest h2, .theme-burgundy h2,
+.theme-forest h3, .theme-burgundy h3,
+.theme-forest h4, .theme-burgundy h4 {
+  color: var(--color-theme-text) !important;
+}
+
+.theme-forest .text-neutral-500, .theme-burgundy .text-neutral-500,
+.theme-forest .dark\:text-neutral-400, .theme-burgundy .dark\:text-neutral-400,
+.theme-forest .text-stone-500, .theme-burgundy .text-stone-500,
+.theme-forest .dark\:text-stone-400, .theme-burgundy .dark\:text-stone-400,
+.theme-forest .text-neutral-400, .theme-burgundy .text-neutral-400 {
+  color: var(--color-theme-text-muted) !important;
+}
+
+/* Button & Divider Overrides */
+.theme-forest .editorial-divider::after, .theme-burgundy .editorial-divider::after,
+.theme-forest .dark .editorial-divider::after, .theme-burgundy .dark .editorial-divider::after {
+  background-color: var(--color-theme-bg) !important;
+  color: var(--color-theme-accent) !important;
+}
+
+.theme-forest .border, .theme-burgundy .border,
+.theme-forest .border-stone-200\/60, .theme-burgundy .border-stone-200\/60,
+.theme-forest .dark\:border-stone-850, .theme-burgundy .dark\:border-stone-850,
+.theme-forest .dark\:border-neutral-900, .theme-burgundy .dark\:border-neutral-900,
+.theme-forest .border-neutral-100, .theme-burgundy .border-neutral-100,
+.theme-forest .dark\:border-neutral-800, .theme-burgundy .dark\:border-neutral-800,
+.theme-forest .dark\:border-\[\#1F1F1E\], .theme-burgundy .dark\:border-\[\#1F1F1E\],
+.theme-forest .border-elegant, .theme-burgundy .border-elegant {
+  border-color: var(--color-theme-border) !important;
+}
+
+/* Surprise me / action button text in forest & burgundy */
+.theme-forest .bg-stone-950, .theme-burgundy .bg-stone-950,
+.theme-forest .dark\:bg-stone-100, .theme-burgundy .dark\:bg-stone-100 {
+  background-color: var(--color-theme-accent) !important;
+  color: var(--color-theme-bg) !important;
+}
+
+/* Inputs and select boxes style overrides */
+.theme-forest input, .theme-burgundy input,
+.theme-forest textarea, .theme-burgundy textarea,
+.theme-forest select, .theme-burgundy select {
+  background-color: var(--color-theme-bg) !important;
+  color: var(--color-theme-text) !important;
+  border-color: var(--color-theme-border) !important;
+}
